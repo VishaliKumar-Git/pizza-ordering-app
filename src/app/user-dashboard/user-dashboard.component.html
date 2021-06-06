@@ -1,0 +1,31 @@
+<div class="gridWrapper">
+    <mat-grid-list cols="3" rowHeight="8:5" [gutterSize]="'30px'">
+        <mat-grid-tile *ngFor="let pizzaObj of pizzaList; let i = index">
+            <div class="gridTileWrapper">
+                <div class="row">
+                    <div class="column">
+                        <img class="iconImg" src="/assets/images/Margherita.jpg" alt="PizzaImg">
+                    </div>
+                    <div class="column" [style.margin.em]="'1'">
+                        <p>{{pizzaObj.name}}</p>
+                        <span>{{pizzaObj.desc}}</span>
+                    </div>
+                </div>
+                <div class="pad1em">
+                    <div [style.float]="'left'">
+                        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+                            <mat-button-toggle (click)="removeFromCart(i)">-</mat-button-toggle>
+                            <mat-button-toggle disabled>{{this.getSelectedQuantity(pizzaObj.code)}}</mat-button-toggle>
+                            <mat-button-toggle (click)="addToCart(i)">+</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                    <div [style.float]="'right'" class="m-t-5em">
+                        <p class="curreny">{{ pizzaObj.price | currency}}
+                        </p>
+                        <span class="error" *ngIf="pizzaObj.quantity <= 0">Sold Out</span>
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

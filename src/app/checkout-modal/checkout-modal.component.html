@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Items Added in the Cart</h1>
+<div mat-dialog-content>
+    <table>
+        <tr style="text-align: left;" class="border-bottom">
+            <th width="10%">S.No</th>
+            <th width="45%">Item</th>
+            <th width="15%">Quantity</th>
+            <th width="15%">Price</th>
+        </tr>
+        <tr *ngFor="let obj of itemArr; let i = index;">
+            <td>{{i + 1}}</td>
+            <td>{{obj.item.name}} <br> {{obj.item.desc}}</td>
+            <td>{{obj.quantity}}</td>
+            <td>{{(obj.item.price * obj.quantity) | currency}}</td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style="color: #3f51b5;"><strong>Total</strong></td>
+            <td style="color: #3f51b5;"><strong>{{getTotalAmount() | currency}}</strong></td>
+        </tr>
+    </table>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" style="width: 100%;">Proceed to checkout</button>
+</div>

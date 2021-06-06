@@ -1,0 +1,31 @@
+<div class="gridWrapper">
+    <mat-grid-list cols="3" rowHeight="8:5" [gutterSize]="'30px'">
+        <mat-grid-tile *ngFor="let pizzaObj of pizzaList; let i = index">
+            <div class="gridTileWrapper">
+                <div class="row">
+                    <div class="column">
+                        <img class="iconImg" src="assets/images/Margherita.jpg" alt="PizzaImg">
+                    </div>
+                    <div class="column" [style.margin.em]="'1'">
+                        <p>{{pizzaObj.name}}</p>
+                        <span>{{pizzaObj.desc}}</span>
+                    </div>
+                </div>
+                <div class="pad1em">
+                    <div [style.float]="'left'" class="m-t-5em">
+                        <button mat-stroked-button color="primary">{{ pizzaObj.price | currency}}</button>
+                    </div>
+                    <div [style.float]="'right'">
+                        <button mat-mini-fab color="primary" (click)="removeItem(pizzaObj.code)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                        &nbsp;
+                        <button mat-mini-fab color="primary" (click)="addItem(pizzaObj.code, pizzaObj)">
+                            <mat-icon>add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

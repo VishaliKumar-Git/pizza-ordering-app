@@ -1,0 +1,26 @@
+<!-- Navbar -->
+<mat-toolbar color="primary">
+  <button mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Basil's Pizza</span>
+  <span class="flexAuto"></span>
+  <button mat-raised-button [routerLink]="['/home/admin']">Admin User
+  </button>
+  <button mat-icon-button [routerLink]="['/home/user']">
+    <mat-icon>person</mat-icon>
+  </button>
+  <button mat-icon-button (click)="openDialog()">
+    <mat-icon matBadge="{{addedCartItems}}" matBadgeColor="warn" >shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>
+
+<!-- Img Section -->
+<mat-grid-list cols="1" rowHeight="5:1">
+  <mat-grid-tile>
+    <img src="/assets/images/pizza_Img_HomePage.jpg" alt="PizzaImg">
+  </mat-grid-tile>
+</mat-grid-list>
+
+<!-- Dashboard -->
+<router-outlet></router-outlet>

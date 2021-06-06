@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.iconImg {
+    height: 100px;
+    width: 100px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50% 50%;
+    p {
+      font-size: 18px;  
+    }
+}
+
+.curreny {
+    font-size: 18px;
+    font-weight: bold;
+    color: #3f51b5;
+}
+
+.gridWrapper {
+    padding: 5em; 
+    background-color:#d3d3d35c;
+}
+
+.gridTileWrapper {
+    padding: 1em; 
+    background-color: white;
+}
+
+.m-t-5em {
+    margin-top: 0.5em;
+}
+
+.pad1em {
+    padding: 1em;
+}
